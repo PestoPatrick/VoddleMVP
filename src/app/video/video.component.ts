@@ -8,7 +8,7 @@ declare const dashjs: any;
 })
 export class VideoComponent implements OnInit {
   // this is for if I initialise the player in the HTML
-  // vidSrc = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
+  vidSrc = 'https://www.dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
 
 
   constructor() {

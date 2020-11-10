@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DescriptionComponent implements OnInit {
 
+  vidDescription = 'This is where the description will be.';
   constructor() { }
 
   ngOnInit(): void {
