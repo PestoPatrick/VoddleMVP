@@ -7,17 +7,17 @@ declare const dashjs: any;
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent implements OnInit {
-
-  vidSrc = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
+  // this is for if I initialise the player in the HTML
+  // vidSrc = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
 
 
   constructor() {
   }
 
   videoPlay(): void {
-    // const url = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
-    // const player = dashjs.MediaPlayer().create();
-    // player.initialize(document.querySelector('#videoPlayer'), url, true);
+    const url = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
+    const player = dashjs.MediaPlayer().create();
+    player.initialize(document.querySelector('#videoPlayer'), url, true);
   }
 
 
