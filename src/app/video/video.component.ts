@@ -8,6 +8,9 @@ declare const dashjs: any;
 })
 export class VideoComponent implements OnInit {
 
+  vidSrc = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
+
+
   constructor() {
   }
 
@@ -20,7 +23,5 @@ export class VideoComponent implements OnInit {
 
   ngOnInit(): void {
     this.videoPlay();
-
-
   }
 }
