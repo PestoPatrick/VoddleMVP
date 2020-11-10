@@ -8,15 +8,19 @@ declare const dashjs: any;
 })
 export class VideoComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+  }
 
-
-
-ngOnInit(): void {
-  const url = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
-  const player = dashjs.MediaPlayer().create();
-  player.initialize(document.querySelector('#videoPlayer'), url, true);
+  videoPlay(): void {
+    // const url = 'https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd';
+    // const player = dashjs.MediaPlayer().create();
+    // player.initialize(document.querySelector('#videoPlayer'), url, true);
   }
 
 
+  ngOnInit(): void {
+    this.videoPlay();
+
+
+  }
 }
