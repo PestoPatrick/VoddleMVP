@@ -1,0 +1,26 @@
+// my way of positioning
+//.videospace {
+//  display: flex;
+//  border: darkslategrey;
+//  margin: 25px;
+//}
+//
+//video {
+//  width: 100%;
+//  height: auto;
+//  flex-basis: content-box;
+//}
+
+// online article way of doing it
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.videoWrapper #videoPlayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
