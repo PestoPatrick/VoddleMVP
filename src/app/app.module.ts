@@ -2,9 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { VideoComponent } from './video/video.component';
+import { VideoComponent } from './content/video/video.component';
 import { ContentComponent } from './content/content.component';
-import { DescriptionComponent } from './description/description.component';
+import { DescriptionComponent } from './content/description/description.component';
 import { SigninComponent } from './signin/signin.component';
 import { SignupComponent } from './signup/signup.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +15,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { AppRoutingModule } from './app-routing.module';
+import { ValidatorDirective } from './validator.directive';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,8 @@ import { MatListModule } from '@angular/material/list';
     DescriptionComponent,
     SigninComponent,
     SignupComponent,
-    NavigationComponent
+    NavigationComponent,
+    ValidatorDirective
   ],
   imports: [
     BrowserModule,
@@ -34,7 +40,12 @@ import { MatListModule } from '@angular/material/list';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
