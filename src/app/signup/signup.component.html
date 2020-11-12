@@ -1,40 +1,67 @@
 <div class="formWrapper">
 
+  <form id="signUpForm" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-  <form [formGroup]="signupFB">
-    <div class="formEntry">
-      <mat-form-field appearance="standard">
-        <mat-label> Username: </mat-label>
-        <input matInput placeholder="John123" formControlName="username" required>
-      </mat-form-field>
-    </div>
-    <div class="formEntry">
+
+    <div class="entry">
       <mat-form-field>
-        <mat-label> Email: </mat-label>
-        <input matInput placeholder="Ex. example@test.com" formControlName="email" required>
+        <mat-label>Username</mat-label>
+        <input matInput type="text" class="form-control" formControlName="username">
       </mat-form-field>
+      <div class="errors">
+        <div *ngIf="submitted && registerForm.get('username').errors" class="alert alert-danger">
+          <div *ngIf="registerForm.get('username').errors.required">
+            Username is required
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="formEntry">
+
+    <div class="entry">
       <mat-form-field>
-        <mat-label> Password </mat-label>
-        <input matInput placeholder="Password#123" formControlName="password" required>
+        <mat-label>Email</mat-label>
+        <input matInput type="text" class="form-control" formControlName="email">
       </mat-form-field>
+      <div class="errors">
+        <div *ngIf="submitted && registerForm.get('email').errors" class="alert alert-danger">
+          <div *ngIf="registerForm.get('email').errors.required">
+            Email is required
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="formEntry">
+
+    <div class="entry">
       <mat-form-field>
-        <mat-label> Confirm Password </mat-label>
-        <input matInput placeholder="Password#123" formControlName="confPassword" required>
+        <mat-label>Password</mat-label>
+        <input matInput type="password" class="form-control" formControlName="password">
       </mat-form-field>
+      <div class="errors">
+        <div *ngIf="submitted && registerForm.get('password').errors" class="alert alert-danger">
+          <div *ngIf="registerForm.get('password').errors.required">
+            Password is required
+          </div>
+        </div>
+      </div>
     </div>
+
+    <div class="entry">
+      <mat-form-field>
+        <mat-label>Confirm Password</mat-label>
+        <input matInput type="password" class="form-control" formControlName="confirmPassword">
+      </mat-form-field>
+      <div class="errors">
+        <div *ngIf="submitted && registerForm.get('confirmPassword').errors" class="alert alert-danger">
+          <div *ngIf="registerForm.get('confirmPassword').errors.required">
+            Confirm Password is required
+          </div>
+          <div *ngIf="registerForm.get('confirmPassword').errors.confirmPasswordValidator">
+            Password and Confirm Password fields do not match.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button mat-button type="submit"> Submit</button>
   </form>
-</div>
-<div *ngIf="signupFB.errors.required">
-  Name is required.
-</div>
-<div *ngIf="signupFB.errors.minlength">
-  Name must be at least 4 characters long.
-</div>
-<div *ngIf="signupFB.errors.forbiddenName">
-  Name cannot be Bob.
-</div>
 </div>

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import {SignupComponent} from './signup/signup.component';
 import {RouterModule, Routes} from '@angular/router';
-import {NavigationComponent} from './navigation/navigation.component';
 import {ContentComponent} from './content/content.component';
 
 const routes: Routes = [

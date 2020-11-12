@@ -1,32 +1,27 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, Validators} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, } from '@angular/forms';
+import {ConfirmPasswordValidator} from '../confirm-password.validator';
 
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
   styleUrls: ['./signup.component.scss']
 })
+
 export class SignupComponent implements OnInit {
 
-  buildForm(): void {
-    signupFB = this.su.group({
-      username: ['', Validators.required,
-        Validators.minLength(4)],
-      email: [''],
-      passwords: this.su.group({
-        password: ['', Validators.required,
-          Validators.minLength(8)],
-        conPassword: ['', Validators.required]
-      }), vali
+  registerForm: FormGroup;
+  submitted = false;
+  constructor(private fb: FormBuilder) { }
+  ngOnInit()  {
+    this.registerForm = this.fb.group({
+      username: ['', Validators.required],
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+      confirmPassword: ['', Validators.required]
+    }, {
+      validator: ConfirmPasswordValidator('password', 'confirmPassword')
     });
   }
-
-
-
-  constructor(private su: FormBuilder ) { }
-
-  ngOnInit(): void {
-  this.buildForm()
-  }
-
+  onSubmit(): void { this.submitted = true; }
 }

@@ -16,10 +16,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import {ReactiveFormsModule} from '@angular/forms';
-import {MatFormFieldModule, MatLabel} from '@angular/material/form-field';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { AppRoutingModule } from './app-routing.module';
-import { ValidatorDirective } from './validator.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +29,6 @@ import { ValidatorDirective } from './validator.directive';
     SigninComponent,
     SignupComponent,
     NavigationComponent,
-    ValidatorDirective
   ],
   imports: [
     BrowserModule,
