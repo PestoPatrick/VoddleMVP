@@ -1,4 +1,4 @@
-import { AbstractControl, FormGroup } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 
 export function ConfirmPasswordValidator(controlName: string, matchingControlName: string) {
   return (formGroup: FormGroup) => {
@@ -10,9 +10,9 @@ export function ConfirmPasswordValidator(controlName: string, matchingControlNam
       return;
     }
     if (control.value !== matchingControl.value) {
-      matchingControl.setErrors({ confirmPasswordValidator: true });
+      matchingControl.setErrors({confirmPasswordValidator: true});
     } else {
       matchingControl.setErrors(null);
     }
   };
-};
+}
