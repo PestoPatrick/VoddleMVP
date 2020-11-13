@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { VideoComponent } from './content/video/video.component';
 import { ContentComponent } from './content/content.component';
 import { DescriptionComponent } from './content/description/description.component';
-import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationComponent } from './navigation/navigation.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -18,7 +18,8 @@ import { MatListModule } from '@angular/material/list';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { AppRoutingModule } from './app-routing.module';
+import {AppRoutingModule} from './app-routing.module';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,8 @@ import { AppRoutingModule } from './app-routing.module';
     VideoComponent,
     ContentComponent,
     DescriptionComponent,
-    SigninComponent,
-    SignupComponent,
+    LoginComponent,
+    RegisterComponent,
     NavigationComponent,
   ],
   imports: [
@@ -44,6 +45,8 @@ import { AppRoutingModule } from './app-routing.module';
     MatButtonModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -4,11 +4,11 @@ import {ConfirmPasswordValidator} from '../confirm-password.validator';
 
 @Component({
   selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss']
+  templateUrl: './register.component.html',
+  styleUrls: ['./register.component.scss']
 })
 
-export class SignupComponent implements OnInit {
+export class RegisterComponent implements OnInit {
 
   registerForm: FormGroup;
   submitted = false;
@@ -16,16 +16,17 @@ export class SignupComponent implements OnInit {
   ngOnInit()  {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required]
     }, {
       validator: ConfirmPasswordValidator('password', 'confirmPassword')
     });
   }
-  onSubmit(formData): void {
+  onSubmit(): void {
     this.submitted = true;
     // send formData to user sign up api endpoint
+    console.log(this.registerForm.value)
 
   }
 }

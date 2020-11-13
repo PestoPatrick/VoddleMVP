@@ -1,0 +1,23 @@
+.formWrapper {
+  display: flex;
+  margin-left: 25%;
+  margin-right: 25%;
+
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-form-field {
+  margin: 10px;
+}
+.errors {
+  margin-left: 10px;
+  margin-top: -15px;
+}
+
+button {
+  margin: 10px;
+}
