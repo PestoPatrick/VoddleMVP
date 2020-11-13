@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ConfirmPasswordValidator} from '../confirm-password.validator';
 
 @Component({
   selector: 'app-login',
@@ -7,21 +8,23 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  submitted = false;
   loginForm: FormGroup;
+  loginSubmitted = false;
 
   constructor(private fb: FormBuilder) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.loginForm = this.fb.group({
-      email: ['', Validators.email, Validators.required],
-      password: ['', Validators.required],
+      email: ['', Validators.required, Validators.email],
+      password: ['', Validators.required]
     });
   }
 
-  onSubmit() {
+
+
+  onSubmit(): void {
     console.log(this.loginForm.value);
-    this.submitted = true;
+    this.loginSubmitted = true;
   }
 
 }

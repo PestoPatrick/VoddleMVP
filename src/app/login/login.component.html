@@ -1,35 +1,23 @@
+
+
 <div class="formWrapper">
 
-  <form id="loginForm" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-
-    <div class="entry">
-      <mat-form-field class="example-full-width">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" id="loginForm">
+      <mat-form-field appearance="standard">
         <mat-label>Email</mat-label>
-        <input matInput type="text" formControlName="email">
+        <input matInput type="text" formControlName="email"/>
       </mat-form-field>
-      <div class="errors">
-        <div *ngIf="submitted && loginForm.get('email').errors" class="alert alert-danger">
-          <div *ngIf="loginForm.get('email').errors.required">
-            Email is required
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="entry">
-      <mat-form-field class="example-full-width">
+
+      <mat-form-field appearance="standard">
         <mat-label>Password</mat-label>
-        <input matInput type="password" formControlName="password">
+        <input matInput type="Password" formControlName="password">
       </mat-form-field>
-      <div class="errors">
-        <div *ngIf="submitted && loginForm.get('password').errors" class="alert alert-danger">
-          <div *ngIf="loginForm.get('password').errors.required">
-            Password is required
-          </div>
-        </div>
-      </div>
-    </div>
-    <button mat-button type="submit" [disabled]="!loginForm.valid"> Submit</button>
+
+    <button mat-button type="submit">Submit</button>
   </form>
 </div>
+
+
+
 
