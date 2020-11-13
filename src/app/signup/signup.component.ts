@@ -23,5 +23,9 @@ export class SignupComponent implements OnInit {
       validator: ConfirmPasswordValidator('password', 'confirmPassword')
     });
   }
-  onSubmit(): void { this.submitted = true; }
+  onSubmit(formData): void {
+    this.submitted = true;
+    // send formData to user sign up api endpoint
+
+  }
 }
