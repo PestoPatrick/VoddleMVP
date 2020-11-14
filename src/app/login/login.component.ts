@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ConfirmPasswordValidator} from '../confirm-password.validator';
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',

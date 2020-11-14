@@ -20,8 +20,6 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
-import { Login2Component } from './login2/login2.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +30,6 @@ import { Login2Component } from './login2/login2.component';
     LoginComponent,
     RegisterComponent,
     NavigationComponent,
-    Login2Component,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +46,6 @@ import { Login2Component } from './login2/login2.component';
     ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
