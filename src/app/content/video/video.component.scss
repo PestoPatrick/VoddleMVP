@@ -6,7 +6,7 @@
 
 }
 
-.videoWindow #videoPlayer {
+.videoWindow > #videoPlayer {
   position: absolute;
   top: 0;
   left: 0;
@@ -14,7 +14,3 @@
   height: 100%;
 }
 
-.videoWrapper {
-  margin-left: 12.5%;
-  margin-right: 12.5%;
-}

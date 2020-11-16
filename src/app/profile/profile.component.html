@@ -1,0 +1,16 @@
+<div class="contentWrapper">
+  <div class="mainWrapper">
+    <div class="profileHeader">
+      <h1>{{Username}}'s Page</h1>
+    </div>
+    <div class="profileBody">
+      <div class="videoUploads">
+          <div class="videoGrid">
+          <app-profile-video-placeholder *ngFor="let pic in pics" [pic]="pic"></app-profile-video-placeholder>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

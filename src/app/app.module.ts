@@ -20,6 +20,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {AppRoutingModule} from './app-routing.module';
 import {HttpClientModule} from '@angular/common/http';
+import { ProfileComponent } from './profile/profile.component';
+import { ProfileVideoPlaceholderComponent } from './profile-video-placeholder/profile-video-placeholder.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {HttpClientModule} from '@angular/common/http';
     LoginComponent,
     RegisterComponent,
     NavigationComponent,
+    ProfileComponent,
+    ProfileVideoPlaceholderComponent,
   ],
   imports: [
     BrowserModule,
